@@ -13,7 +13,7 @@
     z-index: 1;
     transition: all .3s ease-out;
     transform: scale(1);
-    background-color: rgba(233, 192, 43, 0.3);
+    background-color: rgba(18, 18, 18, 0.3);
     border-radius: 50px;
 
 }
@@ -39,7 +39,20 @@
     transition: all .3s ease-out;
 }
 
+.head
+{
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1px;
+    background-color: #121212;
+}
 body {
+    margin:0;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
     color: white;
     background-color: black;
 }
@@ -64,4 +77,28 @@ body {
 .rightAnswer {
     color: green;
     transition: all .1s ease-out;
+}
+
+.ourField {
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.buttonSubmit {
+    border-radius: 8px;
+    background-color: #263238;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.buttonSubmit:hover {
+    background-color: #00695C    ;
+    transition: all .5s ease-out;
+
 }

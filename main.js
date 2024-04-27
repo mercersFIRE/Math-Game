@@ -6,11 +6,11 @@ let popupText = document.querySelector(".popupText");
 let startAgain = document.querySelector(".startAgain");
 let popup = document.querySelector(".popup");
 let firstBlur = document.querySelector(".firstBlur");
+let head = document.querySelector(".head");
 
 
 let no1, no2, right = 0, wrong = 0;
 let sign;
-
 updateProblem();
 updateScore();
 function updateProblem() {
@@ -21,6 +21,7 @@ function updateProblem() {
     updateScore();
     problemStatement.innerHTML = `${no1} ${sign} ${no2}`;
 }
+
 
 ourForm.addEventListener("submit", checkAnswer)
 

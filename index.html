@@ -6,9 +6,16 @@
     <title>Math Game</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    <div class="head animate__animated animate__bounce">
+        <h3>Math Game</h3>
+    </div>
     <div class="firstBlur">
         <div class="mainUi">
             <h3 class="problemStatement animate__animated">Loading</h3>
@@ -16,13 +23,13 @@
                 <input type="text" class="ourField" autocomplete="off">
                 <button type="submit" class="buttonSubmit">Submit</button>
             </form>
-            <p class="scoreComment"></p>
+            <h3 class="scoreComment"></h3>
         </div>
     </div>
 
     <div class="popup hidden">
         <h2 class="popupText"></h2>
-        <button type="submit" class="startAgain">Start Again</button>
+        <button type="submit" class="startAgain buttonSubmit">Start Again</button>
     </div>
 
     <script src="main.js"></script>
