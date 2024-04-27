@@ -4,7 +4,7 @@ let ourField = document.querySelector(".ourField");
 let scoreComment = document.querySelector(".scoreComment");
 let popupText = document.querySelector(".popupText");
 let startAgain = document.querySelector(".startAgain");
-
+let popup= document.querySelector(".popup");
 
 
 let no1, no2, right = 0, wrong = 0;
@@ -33,17 +33,19 @@ function rightAnswer() {
     right++;
     updateProblem();
     ourField.value = "";
+    if(right==10)popupWindow("Congrats! You have won")
     updateScore();
-    if(right==10)popup("Congrats! You have won")
 }
 function wrongAnswer() {
     wrong++;
     ourField.value="";
     ourField.focus();
+    if(wrong==3)popupWindow("Sorry, You have lost");
     updateScore();
-    if(wrong==3)popup("Sorry, You have lost");
 }
-function popup(msg) {
+function popupWindow(msg) {
+    popup.classList.remove("hidden");
+    popup.classList.add("visible");
     popupText.innerHTML=msg;
     startAgain.focus();
 }
@@ -54,7 +56,8 @@ function updateScore() {
 startAgain.addEventListener("click",reset);
 
 function reset() {
-    alert("start");
+    popup.classList.remove("visible");
+    popup.classList.add("hidden");
     right=0;
     wrong=0;
     updateProblem();

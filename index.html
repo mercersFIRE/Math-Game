@@ -1,23 +1,28 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <p class="problemStatement">Loading</p>
-    <form action="" class="ourForm">
-        <input type="text" class="ourField" autocomplete="off">
-        <button type="submit" class="buttonSubmit">Submit</button>
-    </form>
-    <p class="scoreComment"></p>
 
-    <div class="popup">
-        <h2 class="popupText"></h2>
-        <button type="submit" class ="startAgain">Start Again</button>
+<body>
+    <div class="toBlur">
+        <p class="problemStatement">Loading</p>
+        <form action="" class="ourForm">
+            <input type="text" class="ourField" autocomplete="off">
+            <button type="submit" class="buttonSubmit">Submit</button>
+        </form>
+        <p class="scoreComment"></p>
     </div>
-    
-    <script src="main.js"></script> 
+
+    <div class="popup hidden">
+        <h2 class="popupText"></h2>
+        <button type="submit" class="startAgain">Start Again</button>
+    </div>
+
+    <script src="main.js"></script>
 </body>
+
 </html>
