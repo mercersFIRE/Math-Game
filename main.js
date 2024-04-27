@@ -4,7 +4,8 @@ let ourField = document.querySelector(".ourField");
 let scoreComment = document.querySelector(".scoreComment");
 let popupText = document.querySelector(".popupText");
 let startAgain = document.querySelector(".startAgain");
-let popup= document.querySelector(".popup");
+let popup = document.querySelector(".popup");
+let firstBlur = document.querySelector(".firstBlur");
 
 
 let no1, no2, right = 0, wrong = 0;
@@ -30,35 +31,51 @@ function checkAnswer(e) {
 
 }
 function rightAnswer() {
-    right++;
-    updateProblem();
-    ourField.value = "";
-    if(right==10)popupWindow("Congrats! You have won")
-    updateScore();
+    problemStatement.classList.add("animate__zoomOut");
+    problemStatement.classList.add("rightAnswer")
+    
+    setTimeout(() => {
+        problemStatement.classList.remove("animate__zoomOut");
+        problemStatement.classList.remove("rightAnswer");
+        
+        right++;
+        updateProblem();
+        ourField.value = "";
+        if (right == 10) popupWindow("Congrats! You have won")
+        updateScore();
+    }, 1000);
 }
 function wrongAnswer() {
+    problemStatement.classList.add("wrongAnswer");
+    problemStatement.classList.add("animate__headShake");
     wrong++;
-    ourField.value="";
+    ourField.value = "";
     ourField.focus();
-    if(wrong==3)popupWindow("Sorry, You have lost");
+    setTimeout(() => {
+        problemStatement.classList.remove("wrongAnswer");
+        problemStatement.classList.remove("animate__headShake");
+    }, 500);
+    if (wrong == 3) popupWindow("Sorry, You have lost");
     updateScore();
 }
 function popupWindow(msg) {
     popup.classList.remove("hidden");
     popup.classList.add("visible");
-    popupText.innerHTML=msg;
+    firstBlur.classList.add("toBlur");
+    popupText.innerHTML = msg;
     startAgain.focus();
 }
 function updateScore() {
     scoreComment.innerHTML = `Your need ${10 - right} more points to win, and allowed to make ${2 - wrong} mistakes`;
 }
 
-startAgain.addEventListener("click",reset);
+startAgain.addEventListener("click", reset);
 
 function reset() {
     popup.classList.remove("visible");
     popup.classList.add("hidden");
-    right=0;
-    wrong=0;
+    firstBlur.classList.remove("toBlur");
+    right = 0;
+    wrong = 0;
     updateProblem();
 }
