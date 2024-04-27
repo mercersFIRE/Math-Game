@@ -67,7 +67,7 @@ function popupWindow(msg) {
     startAgain.focus();
 }
 function updateScore() {
-    scoreComment.innerHTML = `Your need ${10 - right} more points to win, and allowed to make ${2 - wrong} mistakes`;
+    scoreComment.innerHTML = `${10 - right} more points to win, and ${2 - wrong} mistakes remaining`;
 }
 
 startAgain.addEventListener("click", reset);
