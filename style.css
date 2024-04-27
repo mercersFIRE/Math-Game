@@ -13,7 +13,7 @@
     z-index: 1;
     transition: all .3s ease-out;
     transform: scale(1);
-    background-color: rgba(50, 50, 50, 0.3);
+    background-color: rgba(93, 64, 55, 0.3);
     border-radius: 50px;
 
 }
